@@ -24,7 +24,6 @@ public class PlayerContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
         //Axis (controles)
 
         //-1 <-- 0 --> 1 
