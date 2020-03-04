@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
 
         if(movingRight) {
             //move rigth
-            transform.Translate(new Vector2(-movementSpeed, 0f));
+            transform.Translate(new Vector2(movementSpeed, 0f));
             //revisar si llega al limite superior en x permitido
             if(pos.x >= maxPositionX){
                 //ahora se debe mover a la izquierda
@@ -36,7 +36,7 @@ public class EnemyController : MonoBehaviour
         }
         else{
             //move left
-            transform.Translate(new Vector2(movementSpeed, 0f));
+            transform.Translate(new Vector2(-movementSpeed, 0f));
             if(pos.x <= minPositionX){
                 //ahora se debe mover a la derecha
                 movingRight=true;
