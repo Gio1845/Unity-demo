@@ -47,6 +47,9 @@ public class PlayerContoller : MonoBehaviour
 
             Instantiate(Projectile, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
             timeSinceLastFire = 0f;
+            Projectile.GetComponent<Projectile>().damangebleTargetTag = "Enemy";
+
+            timeSinceLastFire = 0f;
             
         }
             

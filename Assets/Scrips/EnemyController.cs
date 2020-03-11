@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public GameObject Projectile;
     public float fireDelay = 1f;
-
+    private float timeSinceLastFire = 0;
+    public int onFireProjectileCount = 3;
     private float maxPositionX = 1f;
     private float minPositionX= 0f;
 
@@ -42,5 +44,17 @@ public class EnemyController : MonoBehaviour
                 movingRight=true;
             }
         }
+
+        if(timeSinceLastFire >= fireDelay && projectilesFired < onFireProjectileCount){
+            Instantiate(projectile, transform.position, Quaternion.Euler(new Vector3(0,0,180)));
+            projectile.GetComponent<Projectile>().damageableTargetTag = "Player";
+
+            projectilesFired++;
+        }
+        if(projectilesFired >= onFireProjectileCount){
+            timeSinceLastFire =0f;
+            projectilesFired = 0f;
+        }
+        
     }
 }
